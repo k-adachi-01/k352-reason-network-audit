@@ -7,6 +7,7 @@ Grok Bot / Codex / Kiro / Pi を Reason Network で連携できるかを、現�
 ## 構成
 
 - `REPORT.md` — 監査結果・能力マトリクス・重大所見・Done 条件対照・残件
+- `docs/k352-grok-muse-runbook.md` — 改定後の完了条件（ローカル Pi ↔ Grok Bot / Muse）の検証手順
 - `evidence/` — 実測ログ（`INDEX.md` に一覧）。token / secret 本文は含まない
 - `scripts/rest_ask.py` — hosted assistant と同じ REST 経路（`GET agents` / `POST messages`）
 - `scripts/mcp_probe.py` — stdio MCP の `initialize` / `tools/list` / `tools/call` プローブ
