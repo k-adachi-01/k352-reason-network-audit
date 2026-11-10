@@ -1,0 +1,15 @@
+# K-352 audit environment
+UTC 2026-11-10T11:30:42Z
+JST 2026-11-10 20:30:42
+
+0.2.727
+reason-network 0.12.17
+codex-cli 0.162.1
+1.3.0
+kiro-cli 3.0.0
+
+team kazuki0205-84 · relay: Reason's (the default)
+  kazuki0205-84               macbook       this machine
+  kazuki0205-84-3e9f9faf246f  3e9f9faf246f  offline 21d
+  kazuki0205-84-localhost     localhost     offline 19d
+  kazuki0205-84-localhost-2   localhost     offline 19d

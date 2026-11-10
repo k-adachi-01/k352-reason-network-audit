@@ -1,0 +1,13 @@
+### Pi turn 1: remember codeword (no tools)
+{"to":"kazuki0205-84/src-pi-2","answer":null,"timed_out":true,"timeout_seconds":120}
+No answer from kazuki0205-84/src-pi-2 within 120s, and a later one won't reach this command. Ask again with a longer --timeout, or send with reason network send and wait with reason network follow ID, which keeps a late answer in your inbox.
+
+### Pi turn 2: recall
+{"to":"kazuki0205-84/src-pi-2","answer":null,"timed_out":true,"timeout_seconds":120}
+No answer from kazuki0205-84/src-pi-2 within 120s, and a later one won't reach this command. Ask again with a longer --timeout, or send with reason network send and wait with reason network follow ID, which keeps a late answer in your inbox.
+### 20:39:31
+  ◇ kazuki0205-84/src-pi-2                       Pi           idle    ~/src
+  ◆ kazuki0205-84/src-pi-3                       Pi           busy    ~/src
+  ◇ kazuki0205-84/src-pi-4                       Pi           idle    ~/src
+### inbox peek
+[{"id":"01M72KVT75JFJYV8GTHM34H6SX","from":"kazuki0205-84/src-pi-2","fromAgent":"pi","to":"kazuki0205-84/terminal","replyTo":"01M72KVQ3H2DTT03Y53VEREHGX","body":"ACK","sentAt":1794310531300},{"id":"01M72KZMWMBT2DP7XE5EDXB42G","from":"kazuki0205-84/src-pi-2","fromAgent":"pi","to":"kazuki0205-84/terminal","replyTo":"01M72KZCDWY7AK53NKYB64A4QD","body":"K352PITIN","sentAt":1794310656916}]

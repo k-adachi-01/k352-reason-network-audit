@@ -1,0 +1,11 @@
+### 3 concurrent requests
+wall 20s
+--- #1
+{"to":"kazuki0205-84/codex","answer":{"id":"01M72KQEXJ61V50P7RS2FK6Q4H","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/ask-254b9c","replyTo":"01M72KQ8FNHYAV5RDSN7ZT59RG","body":"111","sentAt":1794310388658}}
+
+--- #2
+{"to":"kazuki0205-84/codex","answer":{"id":"01M72KQVWDZRAGGF6JVQ1EP22P","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/ask-dc52e4","replyTo":"01M72KQ8FWHTY2V61BS9HTTTRF","body":"222","sentAt":1794310401933}}
+
+--- #3
+{"to":"kazuki0205-84/codex","answer":{"id":"01M72KQMDATEBVRWQR9GJ7E6ZQ","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/ask-3705d7","replyTo":"01M72KQ8FSF6FPKXSEFM23Z8A5","body":"333","sentAt":1794310394282}}
+

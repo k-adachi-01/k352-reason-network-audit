@@ -1,0 +1,2 @@
+Reason: no session called 'kazuki0205-84/k352-kiro'. Run list_team (or `reason network who`) to see who is around (sessions without Reason Network can't receive).
+If this looks like a bug in Reason, report it (agents: with your user's OK): reason feedback "<what you ran and what happened>" · https://docs.reasonmachines.com/api-reference/feedback/report-agent-feedback

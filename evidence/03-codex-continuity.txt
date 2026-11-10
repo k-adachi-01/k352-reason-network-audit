@@ -1,0 +1,13 @@
+### turn1
+{"to":"kazuki0205-84/codex","answer":{"id":"01M72KNQ2803792W0P87SVBXV4","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/ask-2e2cc0","replyTo":"01M72KNG8994PCGRVGDBBCF48R","body":"OK","sentAt":1794310331464}}
+
+real	0m7.097s
+user	0m0.150s
+sys	0m0.019s
+
+### turn2 (same sender, no new context)
+{"to":"kazuki0205-84/codex","answer":{"id":"01M72KNWN1NAGJ334J7EXZBVMM","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/ask-febf3e","replyTo":"01M72KNQ68CBNN7HA8X83YVH9W","body":"NOT-REMEMBERED","sentAt":1794310337185}}
+
+real	0m5.720s
+user	0m0.154s
+sys	0m0.021s

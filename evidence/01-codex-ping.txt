@@ -1,0 +1,5 @@
+{"to":"kazuki0205-84/codex","answer":{"id":"01M72KMN0ZZRRYHQ4PVG7N5TTN","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/ask-5c9b2b","replyTo":"01M72KM7G9A4YG3G5RAR5EEWQ4","body":"K352-PONG\n/Users/adachi/src/261110_k352-reason-network-audit/fixtures/k352-repo\n# k352 fixture repo","sentAt":1794310296607}}
+
+real	0m13.977s
+user	0m0.178s
+sys	0m0.028s

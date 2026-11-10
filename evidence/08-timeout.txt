@@ -1,0 +1,8 @@
+### send + short timeout
+{"to":"kazuki0205-84/codex","answer":null,"timed_out":true,"timeout_seconds":4}
+No answer from kazuki0205-84/codex within 4s, and a later one won't reach this command. Ask again with a longer --timeout, or send with reason network send and wait with reason network follow ID, which keeps a late answer in your inbox.
+
+real	0m4.128s
+user	0m0.152s
+sys	0m0.020s
+exit=1

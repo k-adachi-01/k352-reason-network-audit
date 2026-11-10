@@ -1,0 +1,5 @@
+{"to":"kazuki0205-84/grok","answer":{"id":"01M72MBNTNS35K7BZ7N8JWXPSD","from":"kazuki0205-84/grok","fromAgent":"cli","to":"kazuki0205-84/ask-2f81f2","replyTo":"01M72MBGRMNDF3GC0XRQYJ521K","body":"Not signed in. To authenticate without a browser, run:\n  grok login --device-code\n\nAlternatively, set the XAI_API_KEY environment variable or run `grok login` on a machine with a browser.\nError: Not signed in. To authenticate without a browser, run:\n  grok login --device-code\n\nAlternatively, set the XAI_API_KEY environment variable or run `grok login` on a machine with a browser.","sentAt":1794311051093}}
+
+real	0m5.335s
+user	0m0.184s
+sys	0m0.029s

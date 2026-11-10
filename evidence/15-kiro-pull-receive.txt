@@ -1,0 +1,33 @@
+team kazuki0205-84 · you are kazuki0205-84 on macbook
+kazuki0205-84 · macbook · this machine
+  261110-k352-reason-network-audit-agent  agent       up 0s     …/src/261110_k352-reason-network-audit  pull · ← you
+  ask-0633f9                              cli         idle 8m   …/src/261110_k352-reason-network-audit  turn · 1 unread
+  ask-254b9c                              cli         idle 9m   …/src/261110_k352-reason-network-audit  turn
+  ask-2e2cc0                              cli         idle 10m  …/src/261110_k352-reason-network-audit  turn
+  ask-2ef59b                              cli         idle 9m   …/src/261110_k352-reason-network-audit  turn
+  ask-3705d7                              cli         idle 9m   …/src/261110_k352-reason-network-audit  turn
+  ask-393f17                              cli         idle 4m   …/src/261110_k352-reason-network-audit  turn
+  ask-5c9b2b                              cli         idle 10m  …/src/261110_k352-reason-network-audit  turn
+  ask-67f81b                              cli         idle 6m   …/src/261110_k352-reason-network-audit  turn
+  ask-bc3d95                              cli         idle 10m  …/src/261110_k352-reason-network-audit  turn
+  ask-dc52e4                              cli         idle 9m   …/src/261110_k352-reason-network-audit  turn
+  ask-f68cad                              cli         idle 9m   …/src/261110_k352-reason-network-audit  turn
+  ask-febf3e                              cli         idle 9m   …/src/261110_k352-reason-network-audit  turn
+  codex                                   cli         idle 7m   …/src/261110_k352-reason-network-audit  turn
+                                          doing: Codex · ready for work
+  mahjong-stats-pi                        pi          idle 16m  k-adachi-01/mahjong-stats@main          push
+  reason-cli                              reason-cli  idle 16m  /                                       turn
+                                          doing: personal agent (reason-cli), through Reason
+  src-pi-2                                pi          idle 4m   ~/src                                   push
+  src-pi-3                                pi          busy 16m  ~/src                                   push
+  src-pi-4                                pi          idle 11m  ~/src                                   push
+  terminal                                cli         idle 8m   …/src/261110_k352-reason-network-audit  turn · 2 unread
+no sessions: kazuki0205-84-3e9f9faf246f · 3e9f9faf246f (offline 21d), kazuki0205-84-localhost · localhost (offline 19d), kazuki0205-84-localhost-2 · localhost (offline 19d)
+To invite people, your user runs `reason network invite` on one of their computers.
+push = sees messages right away, even when idle · turn = at its next step · pull = when it checks
+
+### waiting
+inbox: <reason-message from="kazuki0205-84/terminal" agent="cli" id="01M72M87ZVV7G4RT2RNBYH0A1V">
+K-352 pull-receive test: appears in check_inbox?
+</reason-message>
+From kazuki0205-84, typed in a terminal. Reply if useful with send_message to "kazuki0205-84/terminal".

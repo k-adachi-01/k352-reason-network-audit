@@ -1,0 +1,7 @@
+● kazuki0205-84/codex takes work on Reason Network · Codex in /Users/adachi/src/261110_k352-reason-network-audit/fixtures/k352-repo
+  From any agent or terminal on your team: reason network kazuki0205-84/codex "…"
+
+← kazuki0205-84/terminal Crash-recovery test: run sleep 30, then reply CRASH-RECOVERED.
+  transcript ~/.codex/sessions/2026/11/10/rollout-2026-11-10T20-45-55-01a1c547-701e-70d2-9e46-ddb1f6489f06.jsonl
+  Bash sleep 30
+→ kazuki0205-84/terminal 40.7s · CRASH-RECOVERED

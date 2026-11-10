@@ -1,0 +1,12 @@
+### send long task
+id=01M72MEJPAH68BHBCGV156B37J
+### kill worker mid-task 20:45:52
+who:
+1
+### restart 20:45:55
+### follow
+{"ids":["01M72MEJPAH68BHBCGV156B37J"],"replies":[{"id":"01M72MG3GZS83VCEDEYQ8FYV90","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/terminal","replyTo":"01M72MEJPAH68BHBCGV156B37J","body":"CRASH-RECOVERED","sentAt":1794311196191}]}
+
+real	0m36.199s
+user	0m0.292s
+sys	0m0.057s

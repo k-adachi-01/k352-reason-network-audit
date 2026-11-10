@@ -1,0 +1,10 @@
+### restart worker 20:33:34
+### follow queued id
+{"ids":["01M72KR4CHFSMM8SFADC933HJ5"],"replies":[{"id":"01M72KRH36C1FKCZ1WVFPMJE59","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/terminal","replyTo":"01M72KR4CHFSMM8SFADC933HJ5","body":"DONE-1","sentAt":1794310423654}]}
+
+real	0m6.318s
+user	0m0.170s
+sys	0m0.026s
+### runs.log
+offline-run
+       1 fixtures/k352-repo/runs.log

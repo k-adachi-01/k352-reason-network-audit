@@ -1,0 +1,11 @@
+● kazuki0205-84/codex takes work on Reason Network · Codex in /Users/adachi/src/261110_k352-reason-network-audit/fixtures/k352-repo
+  From any agent or terminal on your team: reason network kazuki0205-84/codex "…"
+
+← kazuki0205-84/terminal Offline-queue test: append exactly one line 'offline-run' to runs.log in the rep
+  transcript ~/.codex/sessions/2026/11/10/rollout-2026-11-10T20-33-35-01a1c53c-213d-73e0-b616-75b094597490.jsonl
+  Bash printf '%s\n' 'offline-run' >> runs.log wc -l < runs.log
+→ kazuki0205-84/terminal 9.2s · DONE-1
+← kazuki0205-84/ask-0633f9 Sleep for 20 seconds (run: sleep 20), then reply SLOW-OK.
+  transcript ~/.codex/sessions/2026/11/10/rollout-2026-11-10T20-33-48-01a1c53c-5814-70c1-a49a-886dfc4f323d.jsonl
+  Bash sleep 20
+→ kazuki0205-84/ask-0633f9 28.6s · SLOW-OK

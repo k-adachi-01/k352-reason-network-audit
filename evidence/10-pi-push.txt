@@ -1,0 +1,10 @@
+### send to idle Pi session (read-only ping)
+20:34:48
+{"ids":["01M72KTGXK2WSXAKTTVXSVNBCC"],"recipients":["kazuki0205-84/src-pi-2"],"deliveries":[{"address":"kazuki0205-84/src-pi-2","state":"queued","note":"queued: delivered within seconds once the session is idle"}]}
+sent at 20:34:49
+### who at 20:35:21
+  ◇ kazuki0205-84/src-pi-2                       Pi           idle    ~/src
+  ◆ kazuki0205-84/src-pi-3                       Pi           busy    ~/src
+  ◇ kazuki0205-84/src-pi-4                       Pi           idle    ~/src
+### inbox
+[{"id":"01M72KVAD4XAXS7VCXDWS9BS2X","from":"kazuki0205-84/src-pi-2","fromAgent":"pi","to":"kazuki0205-84/terminal","replyTo":"01M72KTGXK2WSXAKTTVXSVNBCC","body":"K352-PI-OK\nsession: pi@01a1c523-9b2a-7530-aaaa-d05051973759 (cwd ~/src, model deepseek-v4.1-flash)","sentAt":1794310515108}]

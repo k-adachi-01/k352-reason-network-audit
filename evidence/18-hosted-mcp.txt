@@ -1,0 +1,25 @@
+### hosted MCP endpoint probe
+HTTP/2 401 
+date: Tue, 10 Nov 2026 11:44:18 GMT
+content-type: application/json
+content-length: 715
+cache-control: no-store
+vary: Accept-Encoding
+strict-transport-security: max-age=63072000; includeSubDomains
+x-content-type-options: nosniff
+x-frame-options: DENY
+referrer-policy: strict-origin-when-cross-origin
+content-security-policy: default-src 'none'; frame-ancestors 'none'
+x-request-id: f90af994-8e20-431e-9ac5-e2d695aef0eb
+www-authenticate: Bearer resource_metadata="https://mcp.reasonmachines.com/.well-known/oauth-protected-resource/mcp"
+permissions-policy: camera=(), microphone=(), geolocation=()
+
+--- body
+{"error":"missing_bearer","message":"Authorization required","hint":"This is the Reason MCP server (Streamable HTTP). Add this URL to an MCP client and sign in through its OAuth flow, or send a Reason API key as a bearer token. No Authorization header was sent. Sign in through this client's OAuth flow (resource metadata in WWW-Authenticate), or send Authorization: Bearer <Reason API key> (Settings
+### relay status
+error: the following required arguments were not provided:
+  <URL>
+
+Usage: reason-network relay <URL>
+
+For more information, try '--help'.

@@ -1,0 +1,13 @@
+### post-daemon-restart ping
+{"to":"kazuki0205-84/codex","answer":{"id":"01M72MDPF84VVKVXDWDXQWMTTP","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/ask-8663cf","replyTo":"01M72MDH5HP8WWR174ADS459N9","body":"K352-POST-RESTART-OK","sentAt":1794311117287}}
+
+real	0m5.579s
+user	0m0.175s
+sys	0m0.026s
+exit=0
+### doctor
+✓ daemon running; team kazuki0205-84 with 3 other machine(s), 0 connected
+  ! no teammate connected: check your internet, or that their machines are on (`reason network doctor` there)
+  ! if the team changed relays while this machine was off, set the same one here: `reason network relay <url>`
+✓ login service: installed
+Reason relay (carries ChatGPT, Claude and other hosted assistants' calls to this computer): reaching Reason (network "kazuki0205-84", workspace 056cd2ee-b2b5-4b74-9df6-00cf9cea177a), last at 2026-11-10 11:45 UTC.

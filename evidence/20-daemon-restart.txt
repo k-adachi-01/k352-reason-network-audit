@@ -1,0 +1,36 @@
+### restore accept + restart
+### config
+[inbound]
+default = "accept"
+
+[inbound.people]
+### who after daemon restart
+team kazuki0205-84 · you are kazuki0205-84/macbook
+
+● kazuki0205-84 · macbook · this machine
+  ◇ kazuki0205-84/codex                          Codex        idle    ~/src/261110_k352-reason-network-audit
+      ↳ ready for work
+  ◇ kazuki0205-84/grok                           Grok         idle    ~/src/261110_k352-reason-network-audit
+      ↳ ready for work
+  ◇ kazuki0205-84/mahjong-stats-pi               Pi           idle    mahjong-stats@main
+  ◇ kazuki0205-84/reason-cli                     reason-cli   idle    /
+      ↳ personal agent (reason-cli), through Reason
+  ◇ kazuki0205-84/src-pi-2                       Pi           idle    ~/src
+  ◇ kazuki0205-84/src-pi-3                       Pi           live    ~/src
+  ◇ kazuki0205-84/src-pi-4                       Pi           idle    ~/src
+○ kazuki0205-84-3e9f9faf246f · 3e9f9faf246f · offline
+○ kazuki0205-84-localhost · localhost · offline
+○ kazuki0205-84-localhost-2 · localhost · offline
+### daemon log tail
+[1794311083526] session kazuki0205-84/k352-repo-codex registered
+[1794311085971] session kazuki0205-84/k352-repo-codex ended
+[1794311091903] listening on /Users/adachi/.reason/network/network.sock as kazuki0205-84@macbook
+[1794311091908] team kazuki0205-84 · machine 4717b006ce
+[1794311092048] session kazuki0205-84/reason-cli registered
+[1794311092443] net: on relay https://relay-sin1.compute.reasonmachines.com/
+[1794311092907] session kazuki0205-84/src-pi-4 registered
+[1794311092907] session kazuki0205-84/codex registered
+[1794311092908] session kazuki0205-84/src-pi-3 registered
+[1794311092908] session kazuki0205-84/src-pi-2 registered
+[1794311092908] session kazuki0205-84/grok registered
+[1794311092940] session kazuki0205-84/mahjong-stats-pi registered

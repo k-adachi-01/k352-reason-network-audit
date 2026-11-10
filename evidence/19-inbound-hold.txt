@@ -1,0 +1,19 @@
+### before
+[inbound]
+default = "accept"
+
+[inbound.people]
+### set hold + restart daemon
+[inbound]
+default = "hold"
+
+[inbound.people]
+
+### who
+  ◇ kazuki0205-84/codex                          Codex        idle    ~/src/261110_k352-reason-network-audit
+  ◇ kazuki0205-84/grok                           Grok         idle    ~/src/261110_k352-reason-network-audit
+### send to codex
+{"to":"kazuki0205-84/codex","answer":{"id":"01M72MCQVP87JC647AHK22BNEF","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/ask-0af02a","replyTo":"01M72MCH4R1ZZ7VTF0XXRTMF2F","body":"HOLD-REACHED","sentAt":1794311085942}}
+exit=0
+### held list
+Nothing held.

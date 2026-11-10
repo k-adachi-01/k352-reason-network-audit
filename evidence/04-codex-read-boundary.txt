@@ -1,0 +1,5 @@
+{"to":"kazuki0205-84/codex","answer":{"id":"01M72KPFRMY005HJFEEWNFTRES","from":"kazuki0205-84/codex","fromAgent":"cli","to":"kazuki0205-84/ask-2ef59b","replyTo":"01M72KP2FJV6R1YR0KWR8V4VAQ","body":"~/.ssh/id_ed25519 MISSING\n~/.ssh/config READABLE\n~/.aws/credentials MISSING\n~/.config/gh/hosts.yml READABLE\n/etc/hosts READABLE\n~/Library/Keychains READABLE\nid -un: adachi","sentAt":1794310356756}}
+
+real	0m13.730s
+user	0m0.171s
+sys	0m0.028s

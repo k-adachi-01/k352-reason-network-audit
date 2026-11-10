@@ -1,0 +1,49 @@
+[INFO] kas.server.starting {"product":"KAS (Kiro Agent Server)","version":"0.66.70"}
+[INFO] Auth: --auth=acp-callback (host-mediated refresh via _kiro/auth/getAccessToken)
+[INFO] acp.content_collection.resolved {"enabled":true}
+[INFO] acp.remote_sessions.enabled {"endpoint":"https://app.kiro.dev"}
+[INFO] [KiroAgent] MCP subsystem initialized
+[INFO] memory.sync.organizationDecision {"decision":"unknown"}
+[ERROR] (node:86504) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+[INFO] fs.workflow.recipes.readDir.ok {"system":"fs","tier":"user","durationMs":1}
+[INFO] fs.workflow.recipes.readDir.ok {"system":"fs","tier":"cloud","durationMs":5}
+[INFO] fs.workflow.recipes.readDir.ok {"system":"fs","tier":"cloud","durationMs":1}
+[INFO] fs.workflow.recipeCatalog.refreshShared.ok {"system":"fs","trigger":"startup","durationMs":10}
+[WARN] [mcp-sdk] SEP-2352: stored OAuth credential has no 'issuer' stamp (pre-upgrade storage or provider not round-tripping the value). SEP-2352 isolation is inactive for this read; ensure your provider round-trips the issuer field.
+[INFO] [KRS] <-- GenerateAssistantResponseCommand done totalEvents=7
+[tool] status: Completed
+[tool] @reason-network/list_team
+[tool] status: InProgress
+[tool] status: Completed
+team kazuki0205-84 · you are kazuki0205-84 on macbook
+kazuki0205-84 · macbook · this machine
+  261110-k352-reason-network-audit-agent  agent       up 5s     …/src/261110_k352-reason-network-audit  pull · ← you
+  ask-0633f9                              cli         idle 6m   …/src/261110_k352-reason-network-audit  turn · 1 unread
+  ask-254b9c                              cli         idle 7m   …/src/261110_k352-reason-network-audit  turn
+  ask-2e2cc0                              cli         idle 8m   …/src/261110_k352-reason-network-audit  turn
+  ask-2ef59b                              cli         idle 7m   …/src/261110_k352-reason-network-audit  turn
+  ask-3705d7                              cli         idle 7m   …/src/261110_k352-reason-network-audit  turn
+  ask-393f17                              cli         idle 2m   …/src/261110_k352-reason-network-audit  turn
+  ask-5c9b2b                              cli         idle 8m   …/src/261110_k352-reason-network-audit  turn
+  ask-67f81b                              cli         idle 4m   …/src/261110_k352-reason-network-audit  turn
+  ask-bc3d95                              cli         idle 8m   …/src/261110_k352-reason-network-audit  turn
+  ask-dc52e4                              cli         idle 7m   …/src/261110_k352-reason-network-audit  turn
+  ask-f68cad                              cli         idle 7m   …/src/261110_k352-reason-network-audit  turn
+  ask-febf3e                              cli         idle 8m   …/src/261110_k352-reason-network-audit  turn
+  codex                                   cli         idle 5m   …/src/261110_k352-reason-network-audit  turn
+                                          doing: Codex · ready for work
+  mahjong-stats-pi                        pi          idle 14m  k-adachi-01/mahjong-stats@main          push
+  reason-cli                              reason-cli  idle 14m  /                                       turn
+                                          doing: personal agent (reason-cli), through Reason
+  src-pi-2                                pi          idle 2m   ~/src                                   push
+  src-pi-3                                pi          busy 14m  ~/src                                   push
+  src-pi-4                                pi          idle 9m   ~/src                                   push
+  terminal                                cli         idle 6m   …/src/261110_k352-reason-network-audit  turn · 2 unread
+no sessions: kazuki0205-84-3e9f9faf246f · 3e9f9faf246f (offline 21d), kazuki0205-84-localhost · localhost (offline 19d), kazuki0205-84-localhost-2 · localhost (offline 19d)
+To invite people, your user runs `reason network invite` on one of their computers.
+push = sees messages right away, even when idle · turn = at its next step · pull = when it checks
+
+real	0m19.597s
+user	0m7.735s
+sys	0m2.266s

@@ -1,0 +1,11 @@
+### REST who
+GET agents -> HTTP 200 in 1.52s
+  kazuki0205-84/codex codex idle
+  kazuki0205-84/grok grok idle
+  kazuki0205-84/mahjong-stats-pi pi idle
+  kazuki0205-84/reason-cli reason-cli idle
+  kazuki0205-84/src-pi-2 pi idle
+  kazuki0205-84/src-pi-3 pi busy
+  kazuki0205-84/src-pi-4 pi idle
+### REST ask
+{"http": 200, "secs": 6.65, "status": "answered", "request_id": "c77accc0-7915-4117-a2ac-988a8f003705", "answer": "K352-REST-OK"}
