@@ -1,14 +1,17 @@
-# K-352 監査 — Reason Network 4エージェント連携
+# K-352 監査・比較検証 — Reason Network vs Tailscale（Grok Bot・Muse・ローカル Agent）
 
-Grok Bot / Codex / Kiro / Pi を Reason Network で連携できるかを、現行 engine（reason-network 0.12.17）で再実測した監査リポジトリ。
+Grok Bot / Muse / Codex / Kiro / Pi の間で安全・低運用負荷に作業委譲する通信基盤として、**Reason Network（engine 0.12.17）** と **Tailscale（OAuth Apps + Tailscale Serve HTTPS + 最小 MCP Runner）** を実機で比較検証したリポジトリ。
 
-**結論: 通信路は成立（条件付き採用）、常設の無人運用は不採用。** 詳細と残件は [REPORT.md](REPORT.md)。
+- **2026-11-22 最終比較・選定レポート**: [docs/k352-tailscale-comparison-report.md](docs/k352-tailscale-comparison-report.md)（**結論: 併用（役割分離）— 条件付き採用**）
+- **2026-11-10 Reason Network 単体監査**: [REPORT.md](REPORT.md)
 
 ## 構成
 
-- `REPORT.md` — 監査結果・能力マトリクス・重大所見・Done 条件対照・残件
-- `docs/k352-grok-muse-runbook.md` — 改定後の完了条件（ローカル Pi ↔ Grok Bot / Muse）の検証手順
-- `evidence/` — 実測ログ（`INDEX.md` に一覧）。token / secret 本文は含まない
+- `docs/k352-tailscale-comparison-report.md` — Reason Network vs Tailscale 比較検証レポート・要件マトリクス・採用選定と条件
+- `REPORT.md` — 2026-11-10 Reason Network 監査結果・重大所見
+- `docs/k352-grok-muse-runbook.md` — ローカル Pi ↔ Grok Bot / Muse の検証手順
+- `evidence/` — 実測ログ（`INDEX.md` に一覧、`00`〜`27`）。token / secret 本文は含まない
+- `scripts/tailscale_mcp_runner.py` — Tailscale Serve HTTPS 向け最小 Streamable HTTP MCP サーバー／冪等 Runner（`readonly` / `runner` モード）
 - `scripts/rest_ask.py` — hosted assistant と同じ REST 経路（`GET agents` / `POST messages`）
 - `scripts/mcp_probe.py` — stdio MCP の `initialize` / `tools/list` / `tools/call` プローブ
 - `scripts/mcp_receive_test2.py` — MCP クライアントの pull 受信（`check_inbox`）検証

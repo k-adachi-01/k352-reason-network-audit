@@ -1,0 +1,43 @@
+# Evidence 24: Grok Bot Hosted MCP (Reason Network) Bidirectional Round-Trip (2026-11-22 JST)
+
+- Host: macOS (Apple Silicon), reason-network engine 0.12.17, team `kazuki0205-84`
+- Assistant: Grok Bot desktop app (Custom connector: `https://mcp.reasonmachines.com/mcp`, Streamable HTTP + OAuth)
+- OAuth result: `Reason Network connected — Authorization complete!`
+
+## 1. Grok Bot -> Local Codex Worker (`kazuki0205-84/k352-codex`)
+- Local worker started on secret-free fixture repo (`fixtures/k352-repo`):
+  `reason network serve codex --name k352-codex --cwd <fixture>`
+- Grok Bot called `list_team`:
+  - Network: `kazuki0205-84`
+  - Grok Bot own address: `kazuki0205-84/cursor`
+  - Visible online sessions included `kazuki0205-84/k352-codex` (turn), active local Pi sessions (push), and `kazuki0205-84-localhost/k353-mvm3`
+  - Tool response included a hint suggesting a Webhook routine (`wake_me`) to wake Grok Bot on inbound messages.
+- Grok Bot called `send_message` to `kazuki0205-84/k352-codex`:
+  - Payload: `K-352 round-trip test. Nonce: K352RN01. Reply with exactly: K352-ACK K352RN01`
+  - Host worker log:
+    `← kazuki0205-84/cursor K-352 round-trip test. Nonce: K352RN01. Reply with exactly: K352-ACK K352RN01`
+    `relayed a message to kazuki0205-84/k352-codex from kazuki0205-84/cursor`
+    `→ kazuki0205-84/cursor 4.5s · K352-ACK K352RN01`
+  - End-to-end round-trip observed by Grok Bot: ~11s (`reply_to` matched sent message ID).
+
+## 2. Local Mac -> Grok Bot (`kazuki0205-84/cursor`) Reverse Round-Trip
+- `reason-network who` on Mac listed `cursor` (`personal agent (cursor), through Reason`, tier: `turn`) after Grok Bot called MCP tools.
+- Sent from Mac:
+  `reason network send kazuki0205-84/cursor "K-352 reverse round-trip test. Nonce: K352RN02. Reply with exactly: K352-ACK K352RN02" --json`
+  Response:
+  `{"ids":["01M815ZNJSWBRW0E3E72P8H4BW"],"recipients":["kazuki0205-84/cursor"],"deliveries":[{"address":"kazuki0205-84/cursor","state":"delivered","note":"delivered: the session was waiting for messages"}]}`
+- Note: Grok Bot did NOT wake automatically; when prompted to call `check_inbox`, it received the message from `kazuki0205-84/terminal` and replied via `send_message`.
+- Retrieved on Mac via `reason network inbox --json`:
+  ```json
+  [
+    {
+      "id": "7MYW449QKBQKHZPMB2K375TWGF",
+      "from": "kazuki0205-84/cursor",
+      "fromAgent": "cursor",
+      "to": "kazuki0205-84/terminal",
+      "replyTo": "01M815ZNJSWBRW0E3E72P8H4BW",
+      "body": "K352-ACK K352RN02"
+    }
+  ]
+  ```
+- Finding: Bidirectional round-trip works over Reason Hosted MCP, but Grok Bot inbound is pull (`check_inbox`) unless `wake_me` / Webhook routine is configured.

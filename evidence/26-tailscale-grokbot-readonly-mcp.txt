@@ -1,0 +1,35 @@
+# Evidence 26: Tailscale OAuth Apps (Grok Bot) -> Private Read-Only MCP on Mac (2026-11-22 JST)
+
+- Tailscale plan: Personal Free (`<user>@gmail.com`), MagicDNS enabled, HTTPS Certificates enabled, Tailscale Funnel DISABLED (tailnet-only).
+- Mac test node: ephemeral userspace `tailscaled 1.104.5` (`--tun=userspace-networking`, hostname `k352-mac-test`).
+- Grok Bot plugin: Official Tailscale plugin (Developer: Cursor, OAuth Apps user-identity provisioning).
+
+## 1. OAuth Provisioning & Network Connectivity
+- Connected Grok Bot via official Tailscale plugin OAuth flow (Google login consent).
+- Provisioned device on tailnet: `grokbot-user-35173201` (Linux 6.12.113, `1.104.6`, user-owned by authorizing account, Connected).
+- Note on Free plan & ownership constraint:
+  - Tailscale Custom Device Posture (`custom:grokbot`) is Premium/Enterprise only (unavailable on Free plan).
+  - Observed UI error during state transition / ownership mismatch: `The Grok Bot device is no longer owned by the Tailscale login it signed in as, so Grok Bot signed it out.` — indicates Grok Bot enforces user-ownership on its OAuth-provisioned device (converting the device to tag-owned risks breaking the connector).
+- `tailscale ping -c 3 grokbot-user-35173201` from Mac:
+  - `pong via DERP(iad) in 517ms`
+  - `pong via DERP(iad) in 167ms`
+  - `pong via DERP(iad) in 177ms`
+  - `direct connection not established` (relayed via DERP `iad`)
+
+## 2. Grok Bot Egress Proxy Architecture & HTTP vs HTTPS Finding
+- Grok Bot's cloud box does NOT run a local `tailscale` daemon; it routes traffic through an outbound proxy (`SAND_HTTP_PROXY_NAME`, `SAND_EGRESS_TUNNEL_PROXY_ADDR`, Server: Pingora) out via `grokbot-user-35173201`.
+- Reachability constraints observed from Grok Bot box:
+  - Full MagicDNS FQDN (`<host>.<tailnet>.ts.net`) works over TCP/HTTPS.
+  - Short hostnames, raw `100.x` IPs, and ICMP ping do NOT route through the proxy.
+  - Plain HTTP (`http://...`) via curl returned proxy HTTP 500 before plugin/HTTPS activation; enabling Tailscale Serve HTTPS (`tailscale serve --bg --https=443 18352`, Funnel OFF) resolved TLS cleanly.
+
+## 3. Read-Only Private MCP Server Verification (`scripts/tailscale_mcp_runner.py --mode readonly`)
+- Direct HTTPS checks from Main Grok Bot:
+  - `GET /health`: HTTP 200, 2.07s (cold TLS) -> `{"ok": true, "mode": "readonly", "jobs": 0}`
+  - `POST /mcp` (`k352_ping`, `nonce: K352TS02`): HTTP 200, 0.53s -> `K352-TS-ACK K352TS02`
+  - `POST /mcp` (`k352_read_fixture`, `path: calc.py`): HTTP 200, 0.84s -> `sha256: 9d268916844e2088`, buggy `calc.py` returned.
+- Registered as formal MCP Server in Grok Bot (`https://k352-mac-test.<tailnet>.ts.net/mcp`):
+  - Server log confirmed Streamable HTTP handshake (`initialize` 200 -> `notifications/initialized` 202 -> `tools/list` 200 -> `tools/call` 200).
+  - MCP tool `k352_ping` (`nonce: K352TS01`): returned `K352-TS-ACK K352TS01`, `mode: readonly`.
+  - MCP tool `k352_read_fixture` (`path: calc.py`): returned `sha256: 9d268916844e2088`, `def add(a, b): return a - b # BUG: should be a + b`.
+  - Repeated 3x latency probe from Grok Bot: **0.53–0.57s** per call (HTTP 200 3/3).

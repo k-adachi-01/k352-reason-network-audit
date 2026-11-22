@@ -28,3 +28,7 @@
 | 21 | `21-post-restart.txt` | 再起動直後の依頼成功（5.6s） |
 | 22 | `22-rest-path.txt` | REST の agents 一覧（1.5s）と ask（6.7s） |
 | 23 | `23-crash-recovery.txt` | SIGKILL→再起動で in-flight を再実行（36.2s） |
+| 24 | `24-grokbot-reason-hosted-mcp.txt` | 2026-11-22: Grok Bot Hosted MCP OAuth・双方向往復（~11s / 逆方向 `check_inbox` 回収） |
+| 25 | `25-muse-reason-and-tailscale.txt` | 2026-11-22: Muse Reason OAuth 阻害（`Missing required parameters.`）・Tailscale VM 疎通（~1.0s）・逆方向 API 未提供 |
+| 26 | `26-tailscale-grokbot-readonly-mcp.txt` | 2026-11-22: Tailscale OAuth Apps（Grok Bot）→非公開 HTTPS read-only MCP（0.53–0.57s） |
+| 27 | `27-tailscale-grokbot-runner-delegation.txt` | 2026-11-22: Tailscale 最小 Runner 実作業委譲（29.97s）・冪等性（0.61s）・結果再取得（0.52s） |

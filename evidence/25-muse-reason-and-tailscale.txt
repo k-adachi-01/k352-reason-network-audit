@@ -1,0 +1,22 @@
+# Evidence 25: Muse — Reason Network Hosted MCP, Tailscale VM Client, and Inbound API Check (2026-11-22 JST)
+
+- Assistant: Meta Muse desktop app (dedicated cloud VM)
+
+## 1. Reason Network Hosted MCP (`https://mcp.reasonmachines.com/mcp`)
+- Initial state: Not connected (only `opencode-go` present in Custom Connectors).
+- Muse fetched OAuth metadata (`api.reasonmachines.com`, dynamic client registration + PKCE S256) and prepared Custom Connector `custom.reasonmachines` with scopes `mcp:read`, `mcp:write`, `tools:read`, `tools:execute`.
+- Reproducible blocker: Clicking the generated `Connect` link in browser returned `Missing required parameters.` on the Muse OAuth handler page. Re-issuing the `Connect` link reproduced the exact same `Missing required parameters.` error (2/2 attempts).
+- Result: Blocked at Muse OAuth connector link handoff (unconnected; reproducible blocker recorded).
+
+## 2. Tailscale Integration (Muse VM -> Mac private HTTPS MCP)
+- Architecture: Muse does NOT have a one-click Tailscale OAuth App plugin like Grok Bot. Instead, its cloud VM uses an embedded Tailscale wrapper client requiring interactive user approval + login link each time it joins.
+- Joined tailnet as device `muse` (100.116.68.126, relay `nyc`).
+- Mac -> `muse` `tailscale ping -c 3 muse`: 3/3 timed out (embedded wrapper is egress-oriented / does not answer incoming pings).
+- Muse -> Mac private Tailscale Serve HTTPS (`https://k352-mac-test.<tailnet>.ts.net`, Funnel OFF):
+  - `GET /health`: HTTP 200, ~7.8s (initial connection overhead), body `{"ok": true, "mode": "readonly", "jobs": 0}`
+  - `POST /mcp` (`tools/call: k352_ping`, `nonce: K352MUSETS`): HTTP 200, ~1.0s, response `K352-TS-ACK K352MUSETS`, `mode: readonly`, `server: k352-tailscale-mcp`
+- Teardown: Muse disconnected cleanly (`Not connected`) after verification; admin console device entry requires manual cleanup if desired.
+
+## 3. Inbound API / Webhook / MCP (Pi -> Muse)
+- Confirmed via Muse environment & docs: No public external API, inbound Webhook, or inbound MCP endpoint exists to programmatically send messages to Muse and retrieve replies. Only human-facing channels (e.g., WhatsApp, Muse Mail) exist.
+- Conclusion: Automated `Pi -> Muse` delegation is NOT supported in either Tailscale or (currently blocked) Reason Network.

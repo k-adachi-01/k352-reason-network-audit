@@ -1,0 +1,37 @@
+# Evidence 27: Tailscale Minimal MCP Runner — E2E Delegation, Idempotency, and Result Recovery (2026-11-22 JST)
+
+- Server: `scripts/tailscale_mcp_runner.py --mode runner --port 18352` exposed via `tailscale serve --bg --https=443 18352` (tailnet-only, Funnel OFF).
+- Fixture: `fixtures/k352-repo` (secret-free; initial `python3 -m unittest -v` confirmed 1 failure: `test_add: -1 != 5`).
+- Worker command: `codex exec -s workspace-write --ephemeral -C <fixture> <instruction>`
+  (Note: initial attempt `k352-ts-fix-001` failed immediately with exit 2 because current Codex CLI removed `--full-auto`; replaced with `-s workspace-write --ephemeral`.)
+
+## 1. E2E Delegation (`task_id: k352-ts-fix-002`)
+- Caller: Grok Bot (`Implementation` bot) over Tailscale OAuth App -> private HTTPS MCP.
+- Client round-trip time: **29.97s**
+- Runner execution time (`elapsed_sec`): **28.33s** (network/MCP overhead ~1.6s including polling/serialization; steady-state RPC ~0.5–0.6s)
+- Result: `status: completed`, `returncode: 0`, `test_returncode: 0` (2/2 tests OK).
+- Host independent verification (`git diff -- fixtures/k352-repo` & `python3 -m unittest -v`):
+  ```diff
+  diff --git a/fixtures/k352-repo/calc.py b/fixtures/k352-repo/calc.py
+  --- a/fixtures/k352-repo/calc.py
+  +++ b/fixtures/k352-repo/calc.py
+  @@ -1,5 +1,5 @@
+   def add(a, b):
+  -    return a - b  # BUG: should be a + b
+  +    return a + b
+  ```
+  `Ran 2 tests in 0.000s — OK` (exact match with diff/test result returned to Grok Bot).
+
+## 2. Idempotency / Duplicate-Execution Prevention
+- Re-submitted `k352_delegate_codex` with identical `task_id: "k352-ts-fix-002"`:
+  - Client round-trip time: **0.61s**
+  - Result: `deduplicated: true`, `duplicate_hits: 1`
+  - Codex was NOT re-executed; cached result with identical `started_at` / `finished_at` returned immediately.
+
+## 3. Asynchronous / Post-Timeout Result Recovery
+- Called `k352_job_status(task_id="k352-ts-fix-002")`:
+  - Client round-trip time: **0.52s**
+  - Result: full `status: completed`, `git_diff`, `test_output`, and `duplicate_hits: 1` retrieved intact.
+- Contrast with Reason Network:
+  - Reason `serve codex` re-executes in-flight tasks from scratch on SIGKILL and drops request_id on `TO` timeout.
+  - Tailscale + Minimal MCP Runner enforces contract-level idempotency (`task_id`) and durable status lookup (`job_status`), at the cost of maintaining ~270 lines of Runner code (plus SQLite persistence / supervisor if operated long-term) and lacking native push/continuation into live Pi sessions.
